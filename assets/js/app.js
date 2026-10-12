@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAiAssistant();
   initTimelineToggle();
   initAuthModal();
+  initMobileInteractions();
 });
 
 /* ================= 1. CANVAS PARTICLES ANIMATION ================= */
@@ -867,5 +868,91 @@ function initAuthModal() {
     alert('Đang kết nối tài khoản Google để tạo tài khoản... Thành công!');
     closeModal();
   });
+}
+
+/* ================= 7. MOBILE INTERACTIONS CONTROLLER ================= */
+function initMobileInteractions() {
+  // 1. Mobile Hamburger Menu Drawer Toggle
+  const menuToggleBtn = document.getElementById('mobile-menu-toggle');
+  const navDrawer = document.getElementById('mobile-nav-drawer');
+  const iconOpen = menuToggleBtn?.querySelector('.icon-menu-open');
+  const iconClose = menuToggleBtn?.querySelector('.icon-menu-close');
+
+  if (menuToggleBtn && navDrawer) {
+    menuToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navDrawer.classList.toggle('open');
+      if (iconOpen && iconClose) {
+        iconOpen.style.display = isOpen ? 'none' : 'block';
+        iconClose.style.display = isOpen ? 'block' : 'none';
+      }
+    });
+
+    // Close drawer when tapping outside
+    document.addEventListener('click', (e) => {
+      if (!navDrawer.contains(e.target) && !menuToggleBtn.contains(e.target)) {
+        if (navDrawer.classList.contains('open')) {
+          navDrawer.classList.remove('open');
+          if (iconOpen && iconClose) {
+            iconOpen.style.display = 'block';
+            iconClose.style.display = 'none';
+          }
+        }
+      }
+    });
+
+    // Close when clicking any link inside drawer
+    navDrawer.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navDrawer.classList.remove('open');
+        if (iconOpen && iconClose) {
+          iconOpen.style.display = 'block';
+          iconClose.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // 2. Mobile Profile Card Accordion Toggle
+  const profileToggleBtn = document.getElementById('profile-mobile-toggle');
+  const profileContent = document.getElementById('profile-card-content');
+  const profileToggleText = document.getElementById('profile-toggle-text');
+
+  if (profileToggleBtn && profileContent) {
+    profileToggleBtn.addEventListener('click', () => {
+      const isExpanded = profileContent.classList.toggle('open');
+      profileToggleBtn.classList.toggle('expanded', isExpanded);
+      profileToggleBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+      if (profileToggleText) {
+        profileToggleText.textContent = isExpanded ? 'Thu gọn' : 'Xem hồ sơ';
+      }
+    });
+  }
+
+  // 3. Mobile AI Assistant Pop-up / Bottom Sheet Toggle
+  const chatCard = document.getElementById('chat-assistant-card');
+  const openChatBtn = document.getElementById('open-ai-chat-btn');
+  const floatingAiBtn = document.getElementById('mobile-floating-ai');
+  const closeChatBtn = document.getElementById('close-ai-chat-btn');
+  const chatInput = document.getElementById('chat-input');
+
+  function openMobileAiChat() {
+    if (!chatCard) return;
+    chatCard.classList.add('active-mobile');
+    document.body.classList.add('ai-chat-open');
+    setTimeout(() => {
+      chatInput?.focus();
+    }, 200);
+  }
+
+  function closeMobileAiChat() {
+    if (!chatCard) return;
+    chatCard.classList.remove('active-mobile');
+    document.body.classList.remove('ai-chat-open');
+  }
+
+  openChatBtn?.addEventListener('click', openMobileAiChat);
+  floatingAiBtn?.addEventListener('click', openMobileAiChat);
+  closeChatBtn?.addEventListener('click', closeMobileAiChat);
 }
 

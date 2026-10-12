@@ -118,8 +118,35 @@
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
-          <span>Tài khoản</span>
+          <span class="cta-account-text">Tài khoản</span>
         </button>
+
+        <!-- Mobile Hamburger 3-Line Menu Button -->
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" type="button" title="Mở danh mục menu" aria-label="Menu điều hướng">
+          <svg class="icon-menu-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
+          <svg class="icon-menu-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link active"><span class="mnl-icon">🏠</span> <span>Home (Trang chủ)</span></a></li>
+        <li><a href="tools.html" class="mobile-nav-link"><span class="mnl-icon">🛠️</span> <span>Tool Tiện Ích</span> <span class="badge-pill">12+</span></a></li>
+        <li><a href="projects.html" class="mobile-nav-link"><span class="mnl-icon">💼</span> <span>Dự Án Đã Triển Khai</span> <span class="badge-pill">85+</span></a></li>
+        <li><a href="services.html" class="mobile-nav-link"><span class="mnl-icon">🚀</span> <span>Dịch Vụ &amp; Giải Pháp</span></a></li>
+      </ul>
+      <div class="mobile-nav-contact">
+        <a href="tel:0869096046" class="mnc-item mnc-phone">📞 Hotline: 0869 096 046</a>
+        <a href="https://zalo.me/0909100423" target="_blank" class="mnc-item mnc-zalo">💬 Nhắn Zalo: 0909 100 423</a>
       </div>
     </div>
   </header>
@@ -128,8 +155,29 @@
   <main class="main-wrapper" id="about">
     
     <!-- LEFT COLUMN: SIDEBAR PROFILE CARD -->
-    <aside class="sidebar-profile">
-      <div class="profile-card glass-panel">
+    <aside class="sidebar-profile" id="sidebar-profile">
+      <!-- Mobile Profile Collapsible Trigger Button -->
+      <button class="profile-mobile-toggle-btn" id="profile-mobile-toggle" type="button" aria-expanded="false">
+        <div class="pm-user-wrap">
+          <div class="pm-avatar-mini">
+            <img src="assets/images/khanglong_icon.webp" alt="Trần Thanh Long" width="38" height="38" decoding="async">
+            <span class="pm-status-dot"></span>
+          </div>
+          <div class="pm-user-info">
+            <div class="pm-user-name">
+              <span>Trần Thanh Long</span>
+              <span class="verified-icon-mini" title="Đã xác thực">✓</span>
+            </div>
+            <div class="pm-user-title">Founder Khang Long · 20+ Năm KN</div>
+          </div>
+        </div>
+        <div class="pm-expand-action">
+          <span class="pm-expand-text" id="profile-toggle-text">Xem hồ sơ</span>
+          <svg class="pm-chevron-icon" id="profile-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </button>
+
+      <div class="profile-card glass-panel" id="profile-card-content">
         
         <!-- Avatar Wrapper -->
         <div class="avatar-wrapper">
@@ -228,7 +276,24 @@
     <section class="content-area">
       
       <!-- 1. KHANG LONG AI ASSISTANT -->
-      <div class="chat-assistant-card glass-panel">
+      <!-- Mobile AI Trigger Banner (Shown when chat is collapsed on Mobile) -->
+      <div class="mobile-ai-trigger-banner glass-panel" id="mobile-ai-trigger-banner">
+        <div class="matb-avatar">
+          <img src="assets/images/ai_support_female.webp" alt="AI Support" width="40" height="40" loading="lazy" decoding="async">
+          <span class="online-status-dot"></span>
+        </div>
+        <div class="matb-text">
+          <div class="matb-title">Khang Long AI Assistant <span class="ai-live-badge">Online</span></div>
+          <div class="matb-desc">Chạm để hỏi đáp &amp; tư vấn giải pháp mạng, AI</div>
+        </div>
+        <button type="button" class="matb-cta-btn" id="open-ai-chat-btn">
+          <span>Chat AI</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </button>
+      </div>
+
+      <!-- AI Assistant Card (Always open on Desktop, Pop-up/Expandable on Mobile) -->
+      <div class="chat-assistant-card glass-panel" id="chat-assistant-card">
         <div class="chat-card-header">
           <div class="chat-brand-identity">
             <div class="chat-avatar-icon">
@@ -239,6 +304,13 @@
               <span class="chat-status-active">Trực tuyến</span>
             </div>
           </div>
+          <!-- Mobile Close Button -->
+          <button class="chat-mobile-close-btn" id="close-ai-chat-btn" type="button" title="Thu nhỏ khung chat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
         </div>
 
         <div class="chat-messages-container" id="chat-messages">
@@ -615,7 +687,16 @@
     </div>
   </div>
 
+  <!-- Floating Mobile AI Launcher (Toggles AI Chat on Mobile) -->
+  <button class="mobile-floating-ai-btn" id="mobile-floating-ai" type="button" aria-label="Mở Trợ lý Khang Long AI">
+    <div class="mf-ai-avatar">
+      <img src="assets/images/ai_support_female.webp" alt="Khang Long AI" width="38" height="38" loading="lazy" decoding="async">
+      <span class="mf-pulse-dot"></span>
+    </div>
+    <span class="mf-ai-text">Hỏi AI</span>
+  </button>
+
   <!-- Core App JS -->
-  <script src="assets/js/app.js?v=20261012_perf_v4" defer></script>
+  <script src="assets/js/app.js?v=20261012_mobile_opt_v5" defer></script>
 </body>
 </html>
