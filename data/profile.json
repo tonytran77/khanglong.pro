@@ -13,6 +13,14 @@
   "email_personal": "longtran.net@gmail.com",
   "email_corporate": "long.tran@khanglong.pro",
   "website": "https://khanglong.pro",
+  "primary_business_category": "Dịch vụ mạng máy tính",
+  "core_services": [
+    "Thi công hệ thống mạng LAN & Wifi doanh nghiệp",
+    "Cài đặt & Quản trị Windows Server",
+    "Lắp đặt Camera giám sát IP an ninh",
+    "Giải pháp Trí tuệ Nhân tạo AI Agent & Tự động hóa",
+    "Bảo trì hạ tầng CNTT & Hỗ trợ kỹ thuật IT Helpdesk"
+  ],
   "stats": {
     "years_exp": 20,
     "completed_projects": 85,

@@ -17,27 +17,39 @@ document.addEventListener('DOMContentLoaded', () => {
 function initParticles() {
   const canvas = document.getElementById('particle-canvas');
   if (!canvas) return;
-  const ctx = canvas.getContext('2d');
 
+  // Respect user preference for reduced motion
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  const ctx = canvas.getContext('2d');
   let width = (canvas.width = window.innerWidth);
   let height = (canvas.height = window.innerHeight);
+  let isMobile = width < 768;
 
+  let resizeTimer;
   window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  });
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      isMobile = width < 768;
+    }, 150);
+  }, { passive: true });
 
-  const particleCount = Math.min(Math.floor(width / 25), 60);
+  // Mobile: 15 lightweight particles; Desktop: up to 50
+  const particleCount = isMobile ? 15 : Math.min(Math.floor(width / 30), 50);
   const particles = [];
 
   for (let i = 0; i < particleCount; i++) {
     particles.push({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
+      vx: (Math.random() - 0.5) * (isMobile ? 0.25 : 0.4),
+      vy: (Math.random() - 0.5) * (isMobile ? 0.25 : 0.4),
       radius: Math.random() * 1.5 + 0.8,
-      alpha: Math.random() * 0.5 + 0.2
+      alpha: Math.random() * 0.4 + 0.2
     });
   }
 
@@ -59,19 +71,22 @@ function initParticles() {
       ctx.fillStyle = `rgba(0, 212, 255, ${p.alpha})`;
       ctx.fill();
 
-      for (let j = i + 1; j < particles.length; j++) {
-        const p2 = particles[j];
-        const dx = p.x - p2.x;
-        const dy = p.y - p2.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
+      // Only draw connecting lines on desktop to avoid heavy O(N^2) calculations on mobile
+      if (!isMobile) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = p.x - p2.x;
+          const dy = p.y - p2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 120) {
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(0, 212, 255, ${0.12 * (1 - dist / 120)})`;
-          ctx.lineWidth = 0.6;
-          ctx.stroke();
+          if (dist < 110) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(0, 212, 255, ${0.1 * (1 - dist / 110)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
         }
       }
     }
