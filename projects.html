@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dự Án Hạ Tầng &amp; Hệ Thống Tiêu Biểu | KHANG LONG — Network &amp; AI Solutions</title>
+  
+  <!-- SEO & OpenGraph Meta Tags -->
+  <meta name="description" content="Chi tiết các dự án hạ tầng mạng doanh nghiệp, máy chủ Windows Server, hệ thống Wifi diện rộng và an ninh camera do Khang Long triển khai.">
+  <meta property="og:title" content="Dự Án Tiêu Biểu | Khang Long Network &amp; AI Solutions">
+  <meta property="og:description" content="Hơn 85+ dự án hạ tầng công nghệ thông tin cho doanh nghiệp, nhà máy, resort, khách sạn.">
+  <meta property="og:url" content="https://khanglong.pro/projects.html">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/khanglong_transparent_icon.png">
+
+  <!-- Google Fonts: Inter, Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .page-container {
+      max-width: var(--max-width);
+      margin: 24px auto 60px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .breadcrumb-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .breadcrumb-nav a:hover {
+      color: var(--cyan);
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      padding: 32px 30px;
+      border-radius: var(--radius-lg);
+      margin-bottom: 26px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .hero-title-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .hero-icon-box {
+      font-size: 2.4rem;
+      line-height: 1;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+    }
+    .hero-title {
+      font-family: var(--font-main);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+    }
+    .hero-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 880px;
+    }
+
+    /* Stats Row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 4px;
+    }
+    .stat-box {
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .stat-number {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      font-family: var(--font-mono);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .filter-btn {
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--glass-border);
+      color: var(--text-secondary);
+      font-family: var(--font-main);
+      font-size: 0.83rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-primary);
+    }
+    .filter-btn.active {
+      background: #ffffff;
+      color: #111113;
+      border-color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Projects Detailed Grid */
+    .projects-detailed-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 24px;
+    }
+    .project-card-detail {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .project-card-detail:hover {
+      transform: translateY(-5px);
+      border-color: var(--glass-border-hover);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    }
+    .project-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .project-badge-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(0, 212, 255, 0.12);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 212, 255, 0.25);
+    }
+    .project-location-tag {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .project-highlights-box {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 18px;
+    }
+    [data-theme="light"] .project-highlights-box {
+      background: #f1f5f9;
+    }
+    .project-highlights-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+    .project-highlights-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .project-highlights-list li {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      position: relative;
+      padding-left: 16px;
+      line-height: 1.45;
+    }
+    .project-highlights-list li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-size: 0.75rem;
+    }
+    .project-tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--glass-border);
+    }
+    .tech-pill {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      padding: 4px 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    [data-theme="light"] .tech-pill {
+      background: #f8fafc;
+      border-color: #e2e8f0;
+      color: #64748b;
+    }
+
+    /* CTA Section */
+    .cta-banner {
+      margin-top: 50px;
+      padding: 36px 32px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(99, 102, 241, 0.12));
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .cta-banner h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .cta-banner p {
+      max-width: 650px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .cta-btn-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-action-primary {
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #00d4ff, #0284c7);
+      color: #030712;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 0 20px var(--cyan-glow);
+      transition: all 0.25s ease;
+    }
+    .btn-action-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 26px var(--cyan-glow);
+    }
+    .btn-action-outline {
+      padding: 12px 28px;
+      background: transparent;
+      border: 1px solid var(--glass-border);
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn-action-outline:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Canvas & Ambient Orbs -->
+  <canvas id="particle-canvas"></canvas>
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+
+  <!-- ================= TOP HEADER ================= -->
+  <header class="top-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/images/khanglong_transparent_icon.png" alt="KL Logo" class="brand-icon">
+        <div class="brand-text">
+          <span class="brand-title">KHANG LONG</span>
+          <span class="brand-sub">NETWORK &amp; AI SOLUTIONS</span>
+        </div>
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-item-btn">Home</a></li>
+          <li><a href="tools.html" class="nav-item-btn">Tool <span class="badge-pill">12+</span></a></li>
+          <li><a href="projects.html" class="nav-item-btn active">Dự Án <span class="badge-pill">85+</span></a></li>
+          <li><a href="services.html" class="nav-item-btn">Giải Pháp</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions -->
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Chuyển đổi Sáng/Tối">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <a href="https://zalo.me/0909100423" target="_blank" class="cta-contact-btn">Zalo CEO</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= PROJECTS PAGE CONTAINER ================= -->
+  <main class="page-container">
+    
+    <!-- Breadcrumbs -->
+    <div class="breadcrumb-nav">
+      <a href="index.html">Home</a>
+      <span style="color: var(--text-muted);">/</span>
+      <span style="color: var(--cyan);">Dự Án Tiêu Biểu</span>
+    </div>
+
+    <!-- Hero Banner -->
+    <div class="hero-banner glass-panel">
+      <div class="hero-title-row">
+        <div class="hero-icon-box">🏢</div>
+        <div>
+          <h1 class="hero-title">Hồ Sơ Dự Án Hạ Tầng &amp; Hệ Thống Tiêu Biểu</h1>
+          <p class="hero-desc">
+            Tổng hợp các dự án hạ tầng mạng doanh nghiệp, máy chủ tập trung Windows Server, phủ sóng Wifi mật độ cao và giải pháp an ninh camera do Chuyên gia Trần Thanh Long và Khang Long trực tiếp thiết kế, thi công &amp; vận hành.
+          </p>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-number">85+</div>
+          <div class="stat-label">Dự án công nghệ hoàn thành</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Năm kinh nghiệm thực chiến</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">99.9%</div>
+          <div class="stat-label">Cam kết Uptime hạ tầng mạng</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Hài lòng &amp; Hỗ trợ kỹ thuật 24/7</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">Tất Cả Dự Án (85+)</button>
+      <button class="filter-btn" data-filter="enterprise">Doanh Nghiệp &amp; Nhà Máy</button>
+      <button class="filter-btn" data-filter="hospitality">Resort &amp; Khách Sạn</button>
+      <button class="filter-btn" data-filter="commercial">Khu Thương Mại &amp; Công Cộng</button>
+      <button class="filter-btn" data-filter="security">Camera &amp; Giám Sát An Ninh</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-detailed-grid" id="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card-detail glass-panel" data-category="enterprise">
+        <div>
+          <div class="project-meta-row">
+            <span class="project-badge-tag">Doanh Nghiệp Lớn</span>
+            <span class="project-location-tag">📍 Bà Rịa – Vũng Tàu</span>
+          </div>
+          <h2 class="project-title">Hạ Tầng Server/Client – Công Ty Thép Tấm Lá Phú Mỹ</h2>
+          <p class="project-desc">
+            Thiết kế, xây dựng toàn diện hệ thống mạng và trung tâm dữ liệu nội bộ phục vụ quy trình điều hành nhà máy sản xuất thép quy mô công nghiệp nặng với yêu cầu bảo mật thông tin và tính sẵn sàng nghiêm ngặt.
+          </p>
+          <div class="project-highlights-box">
+            <div class="project-highlights-title">Giải Pháp Thực Hiện</div>
+            <ul class="project-highlights-list">
+              <li>Thiết lập Windows Server &amp; Active Directory quản lý tập trung hàng trăm máy trạm.</li>
+              <li>Phân quyền bảo mật dữ liệu cấp phòng ban, triển khai Group Policy (GPO) nghiêm ngặt.</li>
+              <li>Hệ thống lưu trữ dự phòng RAID kết hợp sao lưu định kỳ, phòng chống mã hóa Ransomware.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-pill">Windows Server</span>
+          <span class="tech-pill">Active Directory</span>
+          <span class="tech-pill">Cisco Switches</span>
+          <span class="tech-pill">RAID Storage</span>
+          <span class="tech-pill">Backup Exec</span>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card-detail glass-panel" data-category="hospitality">
+        <div>
+          <div class="project-meta-row">
+            <span class="project-badge-tag">Du Lịch &amp; Khách Sạn</span>
+            <span class="project-location-tag">📍 Phú Yên</span>
+          </div>
+          <h2 class="project-title">Hệ Thống Camera &amp; Wifi Diện Rộng – Khu Nghỉ Dưỡng Phú Yên</h2>
+          <p class="project-desc">
+            Thi công trọn gói hạ tầng mạng không dây mật độ cao và hệ thống camera giám sát an ninh toàn bộ khuôn viên resort ven biển với diện tích rộng và địa hình phức tạp.
+          </p>
+          <div class="project-highlights-box">
+            <div class="project-highlights-title">Giải Pháp Thực Hiện</div>
+            <ul class="project-highlights-list">
+              <li>Phủ sóng Wifi diện rộng với roaming không ngắt quãng cho hàng trăm khách du lịch cùng lúc.</li>
+              <li>Hệ thống camera giám sát IP sắc nét cao chuẩn công nghiệp, giám sát trung tâm 24/7.</li>
+              <li>Phân tách mạng VLAN riêng biệt giữa hệ thống vận hành nội bộ và mạng Wifi khách hàng.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-pill">Enterprise Wifi</span>
+          <span class="tech-pill">IP Cameras</span>
+          <span class="tech-pill">NVR Storage</span>
+          <span class="tech-pill">VLAN Isolation</span>
+          <span class="tech-pill">PoE Switching</span>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card-detail glass-panel" data-category="commercial">
+        <div>
+          <div class="project-meta-row">
+            <span class="project-badge-tag">Khu Thương Mại</span>
+            <span class="project-location-tag">📍 Quy Nhơn</span>
+          </div>
+          <h2 class="project-title">Hạ Tầng Mạng Không Dây Diện Rộng – Chợ Hoa Lư</h2>
+          <p class="project-desc">
+            Thiết kế giải pháp mạng Wifi công cộng công suất lớn, giải quyết triệt để bài toán nghẽn mạng và suy hao tín hiệu trong khu vực chợ thương mại đông đúc nhiều vật cản.
+          </p>
+          <div class="project-highlights-box">
+            <div class="project-highlights-title">Giải Pháp Thực Hiện</div>
+            <ul class="project-highlights-list">
+              <li>Cân bằng tải đa đường truyền (Multi-WAN Load Balancing) tự động chuyển luồng khi đứt cáp.</li>
+              <li>Kiểm soát lưu lượng và băng thông thông minh theo phiên người dùng tránh chiếm dụng đường truyền.</li>
+              <li>Bộ phát Access Point công suất cao đảm bảo tín hiệu xuyên vật cản ổn định.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-pill">High-Power APs</span>
+          <span class="tech-pill">Load Balancing</span>
+          <span class="tech-pill">Bandwidth Management</span>
+          <span class="tech-pill">QoS Routing</span>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card-detail glass-panel" data-category="hospitality">
+        <div>
+          <div class="project-meta-row">
+            <span class="project-badge-tag">Vận Hành Thực Tế</span>
+            <span class="project-location-tag">📍 Quy Nhơn</span>
+          </div>
+          <h2 class="project-title">Quản Trị Vận Hành Hạ Tầng CNTT Khách Sạn 4 Sao</h2>
+          <p class="project-desc">
+            Đảm nhiệm trọng trách quản trị, giám sát và vận hành toàn bộ hệ sinh thái CNTT cho khách sạn cao cấp tiêu chuẩn 4 sao với lượng khách lưu trú quốc tế liên tục.
+          </p>
+          <div class="project-highlights-box">
+            <div class="project-highlights-title">Giải Pháp Thực Hiện</div>
+            <ul class="project-highlights-list">
+              <li>Duy trì chỉ số sẵn sàng của hệ thống mạng và phần mềm quản lý phòng (PMS) đạt 99.9%.</li>
+              <li>Xử lý sự cố kỹ thuật 24/7 tức thì cho toàn thể cán bộ nhân viên và khách sạn.</li>
+              <li>Bảo mật cổng thanh toán, hệ thống POS và cách ly mạng an toàn thông tin tuyệt đối.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-pill">Helpdesk System</span>
+          <span class="tech-pill">Windows Server</span>
+          <span class="tech-pill">VLAN</span>
+          <span class="tech-pill">Firewall Fortinet</span>
+          <span class="tech-pill">Disaster Recovery</span>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card-detail glass-panel" data-category="enterprise">
+        <div>
+          <div class="project-meta-row">
+            <span class="project-badge-tag">Hạ Tầng Viễn Thông</span>
+            <span class="project-location-tag">📍 Toàn Quốc</span>
+          </div>
+          <h2 class="project-title">Thiết Kế &amp; Triển Khai Chi Nhánh Doanh Nghiệp Hoàng Long</h2>
+          <p class="project-desc">
+            Xây dựng giải pháp kết nối mạng riêng ảo Site-to-Site VPN đồng bộ dữ liệu giữa trụ sở chính và các văn phòng giao dịch trên toàn quốc cho doanh nghiệp viễn thông.
+          </p>
+          <div class="project-highlights-box">
+            <div class="project-highlights-title">Giải Pháp Thực Hiện</div>
+            <ul class="project-highlights-list">
+              <li>Đường hầm mã hóa VPN IPSec an toàn tuyệt đối kết nối các chi nhánh về máy chủ trung tâm.</li>
+              <li>Hệ thống tổng đài IP thoại nội bộ không tốn chi phí cước gọi liên tỉnh.</li>
+              <li>Đồng bộ hóa sao lưu dữ liệu tự động hàng đêm về kho lưu trữ đám mây an toàn.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-pill">Site-to-Site VPN</span>
+          <span class="tech-pill">IP PBX Phone</span>
+          <span class="tech-pill">Cisco Routers</span>
+          <span class="tech-pill">Cloud Backup</span>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project-card-detail glass-panel" data-category="security">
+        <div>
+          <div class="project-meta-row">
+            <span class="project-badge-tag">An Ninh Thông Minh</span>
+            <span class="project-location-tag">📍 Gia Lai &amp; Quy Nhơn</span>
+          </div>
+          <h2 class="project-title">Trung Tâm Giám Sát Camera IP &amp; Báo Động AI Doanh Nghiệp</h2>
+          <p class="project-desc">
+            Triển khai hạ tầng giám sát an ninh camera IP chuẩn 4K tích hợp nhận diện thông minh, cảnh báo xâm nhập thời gian thực về điện thoại quản lý cho chuỗi kho bãi doanh nghiệp.
+          </p>
+          <div class="project-highlights-box">
+            <div class="project-highlights-title">Giải Pháp Thực Hiện</div>
+            <ul class="project-highlights-list">
+              <li>Hệ thống đầu ghi NVR hỗ trợ phân tích AI, khoanh vùng cảnh báo hàng rào ảo.</li>
+              <li>Phân quyền xem camera qua App cho các cấp quản lý với đường truyền mã hóa bảo mật.</li>
+              <li>Hệ thống nguồn dự phòng UPS lưu điện liên tục đảm bảo an ninh ngay cả khi mất điện lưới.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-pill">AI Camera</span>
+          <span class="tech-pill">NVR Enterprise</span>
+          <span class="tech-pill">Optical Fiber LAN</span>
+          <span class="tech-pill">UPS Backup</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Call to Action Banner -->
+    <div class="cta-banner">
+      <h3>Bạn Cần Tư Vấn &amp; Khảo Sát Hệ Thống CNTT Cho Doanh Nghiệp?</h3>
+      <p>
+        Khang Long sẵn sàng khảo sát hiện trạng hạ tầng mạng, đánh giá an toàn thông tin và tư vấn giải pháp tối ưu chi phí hoàn toàn miễn phí cho quý doanh nghiệp.
+      </p>
+      <div class="cta-btn-group">
+        <a href="https://zalo.me/0909100423" target="_blank" class="btn-action-primary">Nhắn Zalo CEO (0909 100 423)</a>
+        <a href="tel:0869096046" class="btn-action-outline">Gọi Hotline: 0869 096 046</a>
+        <a href="services.html" class="btn-action-outline">Xem Các Gói Giải Pháp</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>KHANG LONG — NETWORK &amp; AI SOLUTIONS</strong> &copy; 2026.
+      </div>
+      <div class="footer-links">
+        <a href="https://zalo.me/0909100423" target="_blank">Zalo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/app.js"></script>
+  <script>
+    // Project Category Filtering
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card-detail');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter');
+          projectCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

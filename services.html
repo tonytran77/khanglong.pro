@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giải Pháp CNTT &amp; Trí Tuệ Nhân Tạo | KHANG LONG — Network &amp; AI Solutions</title>
+  
+  <!-- SEO & OpenGraph Meta Tags -->
+  <meta name="description" content="Chi tiết các giải pháp hạ tầng mạng doanh nghiệp, quản trị máy chủ Windows Server, hệ sinh thái Microsoft 365, an ninh mạng và AI Agent tự động hóa của Khang Long.">
+  <meta property="og:title" content="Giải Pháp Công Nghệ Doanh Nghiệp | Khang Long Network &amp; AI Solutions">
+  <meta property="og:description" content="Tư vấn, thiết kế, triển khai hạ tầng mạng, bảo mật và giải pháp AI Agent thực chiến cho doanh nghiệp.">
+  <meta property="og:url" content="https://khanglong.pro/services.html">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/khanglong_transparent_icon.png">
+
+  <!-- Google Fonts: Inter, Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .page-container {
+      max-width: var(--max-width);
+      margin: 24px auto 60px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .breadcrumb-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .breadcrumb-nav a:hover {
+      color: var(--cyan);
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      padding: 32px 30px;
+      border-radius: var(--radius-lg);
+      margin-bottom: 26px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .hero-title-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .hero-icon-box {
+      font-size: 2.4rem;
+      line-height: 1;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+    }
+    .hero-title {
+      font-family: var(--font-main);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+    }
+    .hero-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 880px;
+    }
+
+    /* Services Grid */
+    .services-main-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .service-card-deep {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card-deep:hover {
+      transform: translateY(-5px);
+      border-color: var(--glass-border-hover);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    }
+    .service-card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .service-icon-bubble {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.35;
+    }
+    .service-desc-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .service-feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .service-feature-list li {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      position: relative;
+      padding-left: 20px;
+      line-height: 1.45;
+    }
+    .service-feature-list li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-size: 0.8rem;
+    }
+    .service-bottom-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 14px;
+      border-top: 1px solid var(--glass-border);
+    }
+    .service-tag {
+      font-size: 0.74rem;
+      font-family: var(--font-mono);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    /* Workflow Section */
+    .section-headline {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 40px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .workflow-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .workflow-step-card {
+      padding: 22px 20px;
+      border-radius: var(--radius-md);
+      position: relative;
+    }
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--cyan);
+      opacity: 0.8;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .step-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .step-desc {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* SLA & Commitments Grid */
+    .sla-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .sla-card {
+      padding: 24px;
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .sla-icon {
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .sla-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .sla-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Consultation Banner */
+    .consult-banner {
+      padding: 36px 32px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(99, 102, 241, 0.15));
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .consult-text-box h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .consult-text-box p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      max-width: 650px;
+      line-height: 1.5;
+    }
+    .consult-action-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-consult-primary {
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #00d4ff, #0284c7);
+      color: #030712;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 0 20px var(--cyan-glow);
+      transition: all 0.25s ease;
+    }
+    .btn-consult-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 26px var(--cyan-glow);
+    }
+    .btn-consult-outline {
+      padding: 12px 28px;
+      background: transparent;
+      border: 1px solid var(--glass-border);
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn-consult-outline:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Canvas & Ambient Orbs -->
+  <canvas id="particle-canvas"></canvas>
+  <div class="ambient-orb orb-1"></div>
+  <div class="ambient-orb orb-2"></div>
+
+  <!-- ================= TOP HEADER ================= -->
+  <header class="top-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/images/khanglong_transparent_icon.png" alt="KL Logo" class="brand-icon">
+        <div class="brand-text">
+          <span class="brand-title">KHANG LONG</span>
+          <span class="brand-sub">NETWORK &amp; AI SOLUTIONS</span>
+        </div>
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-item-btn">Home</a></li>
+          <li><a href="tools.html" class="nav-item-btn">Tool <span class="badge-pill">12+</span></a></li>
+          <li><a href="projects.html" class="nav-item-btn">Dự Án <span class="badge-pill">85+</span></a></li>
+          <li><a href="services.html" class="nav-item-btn active">Giải Pháp</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions -->
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Chuyển đổi Sáng/Tối">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <a href="https://zalo.me/0909100423" target="_blank" class="cta-contact-btn">Zalo CEO</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= SERVICES PAGE CONTAINER ================= -->
+  <main class="page-container">
+    
+    <!-- Breadcrumbs -->
+    <div class="breadcrumb-nav">
+      <a href="index.html">Home</a>
+      <span style="color: var(--text-muted);">/</span>
+      <span style="color: var(--cyan);">Giải Pháp &amp; Dịch Vụ Doanh Nghiệp</span>
+    </div>
+
+    <!-- Hero Banner -->
+    <div class="hero-banner glass-panel">
+      <div class="hero-title-row">
+        <div class="hero-icon-box">⚡</div>
+        <div>
+          <h1 class="hero-title">Giải Pháp Công Nghệ &amp; Dịch Vụ Hạ Tầng Doanh Nghiệp</h1>
+          <p class="hero-desc">
+            Khang Long Network &amp; AI Solutions cung cấp hệ sinh thái dịch vụ toàn diện từ thiết kế, thi công hạ tầng mạng vật lý, bảo mật máy chủ dữ liệu cho đến triển khai tự động hóa bằng Trí Tuệ Nhân Tạo (AI Agent) thực chiến.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Deep Service Packages -->
+    <div class="services-main-grid">
+
+      <!-- Package 1: Network & Wireless -->
+      <div class="service-card-deep glass-panel">
+        <div>
+          <div class="service-card-header">
+            <div class="service-icon-bubble">🌐</div>
+            <h2 class="service-title">Hạ Tầng Mạng Doanh Nghiệp &amp; Wifi Chuyên Dụng</h2>
+          </div>
+          <p class="service-desc-text">
+            Khảo sát đo kiểm sóng, thiết kế sơ đồ mạng chuẩn quốc tế, thi công cáp mạng Cat6/Cáp quang tốc độ cao, cấu hình Switch/Router chuyên dụng chịu tải lớn.
+          </p>
+          <ul class="service-feature-list">
+            <li>Cân bằng tải đa đường truyền (Multi-WAN Failover) chống gián đoạn kết nối.</li>
+            <li>Phủ sóng Wifi Roaming thông minh mật độ cao cho văn phòng, khách sạn, resort.</li>
+            <li>Phân vùng mạng VLAN, quản lý băng thông QoS ưu tiên cuộc gọi và ứng dụng cốt lõi.</li>
+            <li>Thiết lập kết nối mạng riêng ảo Site-to-Site VPN an toàn giữa các văn phòng chi nhánh.</li>
+          </ul>
+        </div>
+        <div class="service-bottom-tags">
+          <span class="service-tag">Cisco CCNA</span>
+          <span class="service-tag">Multi-WAN Router</span>
+          <span class="service-tag">Wifi 6 Roaming</span>
+          <span class="service-tag">Fiber Optic LAN</span>
+        </div>
+      </div>
+
+      <!-- Package 2: Server & Microsoft 365 -->
+      <div class="service-card-deep glass-panel">
+        <div>
+          <div class="service-card-header">
+            <div class="service-icon-bubble">🗄️</div>
+            <h2 class="service-title">Quản Trị Máy Chủ &amp; Microsoft 365 Doanh Nghiệp</h2>
+          </div>
+          <p class="service-desc-text">
+            Triển khai hạ tầng máy chủ nội bộ kết hợp điện toán đám mây Microsoft 365 bản quyền, tối ưu hóa hiệu suất làm việc nhóm và bảo vệ tài sản số doanh nghiệp.
+          </p>
+          <ul class="service-feature-list">
+            <li>Cài đặt, tối ưu hóa Windows Server (2012 - 2022) và dịch vụ Active Directory (AD).</li>
+            <li>Áp dụng chính sách bảo mật Group Policy (GPO) khóa quyền cài đặt phần mềm độc hại.</li>
+            <li>Triển khai Email doanh nghiệp Exchange Online, Microsoft Teams, SharePoint lưu trữ chung.</li>
+            <li>Chiến lược sao lưu dự phòng nhiều lớp 3-2-1 chống mã độc tống tiền (Ransomware).</li>
+          </ul>
+        </div>
+        <div class="service-bottom-tags">
+          <span class="service-tag">MCSA / MCITP</span>
+          <span class="service-tag">Active Directory</span>
+          <span class="service-tag">Microsoft 365</span>
+          <span class="service-tag">Disaster Recovery</span>
+        </div>
+      </div>
+
+      <!-- Package 3: Security & AI Camera -->
+      <div class="service-card-deep glass-panel">
+        <div>
+          <div class="service-card-header">
+            <div class="service-icon-bubble">🛡️</div>
+            <h2 class="service-title">An Ninh Thông Tin, Tường Lửa &amp; Camera AI</h2>
+          </div>
+          <p class="service-desc-text">
+            Bảo vệ toàn diện hệ thống thông tin doanh nghiệp trước các cuộc tấn công mạng, đồng thời giám sát an ninh trực quan thông minh 24/7 bằng công nghệ nhận diện AI.
+          </p>
+          <ul class="service-feature-list">
+            <li>Cấu hình thiết bị Tường lửa chuyên dụng (Firewall Fortinet, Sophos, pfSense).</li>
+            <li>Thiết lập kết nối an toàn SSL-VPN cho nhân sự làm việc từ xa an tâm không rò rỉ dữ liệu.</li>
+            <li>Lắp đặt hệ thống Camera giám sát IP chuẩn 4K, đầu ghi NVR dung lượng lưu trữ dài ngày.</li>
+            <li>Tích hợp tính năng AI: Hàng rào ảo, cảnh báo chuyển động thông minh và báo động còi đèn.</li>
+          </ul>
+        </div>
+        <div class="service-bottom-tags">
+          <span class="service-tag">Next-Gen Firewall</span>
+          <span class="service-tag">SSL VPN</span>
+          <span class="service-tag">AI CCTV IP</span>
+          <span class="service-tag">Access Control</span>
+        </div>
+      </div>
+
+      <!-- Package 4: AI Agent Solutions -->
+      <div class="service-card-deep glass-panel">
+        <div>
+          <div class="service-card-header">
+            <div class="service-icon-bubble">🤖</div>
+            <h2 class="service-title">Giải Pháp AI Agent &amp; Tự Động Hóa Quy Trình</h2>
+          </div>
+          <p class="service-desc-text">
+            Ứng dụng các mô hình Trí Tuệ Nhân Tạo tiên tiến nhất để tự động hóa khâu chăm sóc khách hàng, trích xuất dữ liệu tài liệu và tạo đòn bẩy đột phá năng suất cho doanh nghiệp.
+          </p>
+          <ul class="service-feature-list">
+            <li>Xây dựng Trợ lý ảo AI Chatbot chăm sóc khách hàng 24/7 trên Website và Fanpage Meta.</li>
+            <li>Tự động hóa bóc tách hóa đơn, hợp đồng, số hóa hồ sơ tài liệu lưu trữ chính xác.</li>
+            <li>Tích hợp API mô hình ngôn ngữ lớn (Gemini, Claude, GPT) vào phần mềm nội bộ doanh nghiệp.</li>
+            <li>Thiết kế hệ thống tự động sản xuất nội dung đa phương tiện, video ngắn marketing.</li>
+          </ul>
+        </div>
+        <div class="service-bottom-tags">
+          <span class="service-tag">AI Agent Orchestration</span>
+          <span class="service-tag">LLM Integration</span>
+          <span class="service-tag">Workflow Automation</span>
+          <span class="service-tag">Modern Web App</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 5-Step Implementation Workflow -->
+    <h3 class="section-headline">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      Quy Trình Triển Khai Chuẩn Kỹ Thuật 5 Bước
+    </h3>
+    <div class="workflow-steps-grid">
+      <div class="workflow-step-card glass-panel">
+        <div class="step-number">01</div>
+        <div class="step-title">Khảo Sát Hiện Trạng</div>
+        <p class="step-desc">Đến tận nơi khảo sát địa hình, đo kiểm suy hao tín hiệu mạng, lắng nghe nhu cầu thực tế của quý doanh nghiệp.</p>
+      </div>
+      <div class="workflow-step-card glass-panel">
+        <div class="step-number">02</div>
+        <div class="step-title">Lập Bản Vẽ &amp; Dự Toán</div>
+        <p class="step-desc">Thiết kế sơ đồ nguyên lý hạ tầng, đề xuất danh mục thiết bị chính hãng và báo giá minh bạch tối ưu chi phí.</p>
+      </div>
+      <div class="workflow-step-card glass-panel">
+        <div class="step-number">03</div>
+        <div class="step-title">Thi Công &amp; Cấu Hình</div>
+        <p class="step-desc">Thi công dây dẫn thẩm mỹ chuẩn phòng máy chủ, gắn nhãn đánh dấu mạng (labeling) và cấu hình bảo mật chuyên sâu.</p>
+      </div>
+      <div class="workflow-step-card glass-panel">
+        <div class="step-number">04</div>
+        <div class="step-title">Nghiệm Thu &amp; Bàn Giao</div>
+        <p class="step-desc">Kiểm thử tải thực tế, bàn giao tài liệu kỹ thuật, sơ đồ hệ thống chi tiết và hướng dẫn quản trị cho nhân sự.</p>
+      </div>
+      <div class="workflow-step-card glass-panel">
+        <div class="step-number">05</div>
+        <div class="step-title">Bảo Hành &amp; Hỗ Trợ 24/7</div>
+        <p class="step-desc">Đồng hành giám sát hệ thống, bảo dưỡng định kỳ và phản ứng hỗ trợ kỹ thuật nhanh chóng khi có sự cố phát sinh.</p>
+      </div>
+    </div>
+
+    <!-- SLA & Quality Commitments -->
+    <h3 class="section-headline">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Cam Kết Chất Lượng Dịch Vụ (SLA) Của Khang Long
+    </h3>
+    <div class="sla-grid">
+      <div class="sla-card glass-panel">
+        <div class="sla-icon">⚡</div>
+        <div class="sla-title">Độ Ổn Định 99.9% Uptime</div>
+        <p class="sla-desc">Thiết kế hạ tầng luôn có cơ chế dự phòng nguồn điện và đường truyền, đảm bảo vận hành kinh doanh không gián đoạn.</p>
+      </div>
+      <div class="sla-card glass-panel">
+        <div class="sla-icon">⏱️</div>
+        <div class="sla-title">Phản Hồi Sự Cố Tức Thì</div>
+        <p class="sla-desc">Đội ngũ kỹ sư hỗ trợ kỹ thuật từ xa qua Ultraview/AnyDesk trong 15 phút và có mặt trực tiếp tại chỗ theo yêu cầu.</p>
+      </div>
+      <div class="sla-card glass-panel">
+        <div class="sla-icon">🔒</div>
+        <div class="sla-title">Bảo Mật Dữ Liệu Tuyệt Đối</div>
+        <p class="sla-desc">Ký cam kết bảo mật thông tin (NDA) chặt chẽ, mọi tài khoản quản trị và dữ liệu doanh nghiệp đều thuộc quyền sở hữu của khách hàng.</p>
+      </div>
+      <div class="sla-card glass-panel">
+        <div class="sla-icon">🏆</div>
+        <div class="sla-title">Thiết Bị Chính Hãng 100%</div>
+        <p class="sla-desc">Cung cấp thiết bị Cisco, MikroTik, Ruijie, Fortinet, HP, Dell chính hãng đầy đủ chứng nhận CO/CQ và bảo hành chính hãng.</p>
+      </div>
+    </div>
+
+    <!-- Contact & Consultation Banner -->
+    <div class="consult-banner">
+      <div class="consult-text-box">
+        <h3>Sẵn Sàng Nâng Cấp Hệ Thống CNTT Cùng Chuyên Gia?</h3>
+        <p>
+          Liên hệ ngay với Chuyên gia Trần Thanh Long để được tư vấn phương án giải pháp tối ưu nhất cho doanh nghiệp của bạn tại Quy Nhơn, Gia Lai và các tỉnh lân cận.
+        </p>
+      </div>
+      <div class="consult-action-btns">
+        <a href="https://zalo.me/0909100423" target="_blank" class="btn-consult-primary">Nhắn Zalo CEO (0909 100 423)</a>
+        <a href="tel:0869096046" class="btn-consult-outline">Hotline: 0869 096 046</a>
+        <a href="projects.html" class="btn-consult-outline">Xem Các Dự Án Tiêu Biểu</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= SITE FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>KHANG LONG — NETWORK &amp; AI SOLUTIONS</strong> &copy; 2026.
+      </div>
+      <div class="footer-links">
+        <a href="https://zalo.me/0909100423" target="_blank">Zalo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

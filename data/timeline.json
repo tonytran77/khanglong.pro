@@ -1,0 +1,50 @@
+[
+  {
+    "year": "2024 – Hiện nay",
+    "role": "Chuyên Viên IT Helpdesk & Quản Trị Hệ Thống Mạng",
+    "company": "Khách Sạn 4 Sao",
+    "desc": "Quản trị, vận hành và giám sát toàn bộ hạ tầng CNTT (máy chủ, máy trạm, Cisco switch, Wifi nội bộ/khách, VPN, kiểm soát an ninh mạng)."
+  },
+  {
+    "year": "2015 – 2024",
+    "role": "Chuyên Viên Thiết Kế & Thi Công Hạ Tầng CNTT",
+    "company": "Công Ty TNHH Trang Thiết Bị – Viễn Thông Hoàng Long",
+    "desc": "Thiết kế giải pháp, tổ chức triển khai và nghiệm thu hệ thống mạng, máy tính, giám sát an ninh cho khách hàng doanh nghiệp quy mô lớn trên toàn quốc."
+  },
+  {
+    "year": "2012 – 2015",
+    "role": "Quản Lý Cơ Sở",
+    "company": "Trường Cao Đẳng An Ninh Mạng iSPACE – Cơ Sở Quy Nhơn",
+    "desc": "Quản lý hoạt động đào tạo, điều phối giảng viên và kỹ thuật viên; xây dựng hạ tầng phòng lab thực hành, hệ thống máy chủ trung tâm; đào tạo an ninh mạng cho học viên."
+  },
+  {
+    "year": "2012",
+    "role": "Hoàn Thành Chứng Chỉ CCNA Quốc Tế",
+    "company": "Trung Tâm Tin Học VnPro (TP.HCM)",
+    "desc": "Tốt nghiệp khóa đào tạo Quản trị Mạng Cisco chuyên sâu và nhận chứng chỉ CCNA do Trung tâm VnPro cấp."
+  },
+  {
+    "year": "2011",
+    "role": "Hoàn Thành Chứng Chỉ MCSA & MCITP",
+    "company": "Trung Tâm Đào Tạo CNTT Nhất Nghệ (TP.HCM)",
+    "desc": "Tốt nghiệp khóa đào tạo Quản trị Hệ thống Mạng Microsoft và nhận chứng chỉ chuyên môn MCSA, MCITP."
+  },
+  {
+    "year": "2007 – 2012",
+    "role": "Nhân Viên Quản Trị Hệ Thống CNTT",
+    "company": "Xưởng May Xuất Khẩu Un-Available",
+    "desc": "Vận hành, bảo trì máy tính, thiết bị ngoại vi; quản trị hạ tầng Server/Client; thực hiện chính sách bảo mật và sao lưu dữ liệu sản xuất."
+  },
+  {
+    "year": "2005 – 2007",
+    "role": "Kỹ Thuật Viên Phần Cứng & Mạng",
+    "company": "Công Ty Máy Tính Quang Huy (Quận 1, TP.HCM)",
+    "desc": "Lắp ráp, cài đặt, bảo trì máy tính, máy in và thiết bị mạng; hỗ trợ kỹ thuật tại hiện trường cho khách hàng doanh nghiệp."
+  },
+  {
+    "year": "2001 – 2005",
+    "role": "Cử Nhân Tin Học (CNTT)",
+    "company": "Trường Đại Học Quy Nhơn",
+    "desc": "Tốt nghiệp Cử nhân Tin học chính quy, xây dựng nền tảng vững chắc về khoa học máy tính, thuật toán và công nghệ mạng."
+  }
+]

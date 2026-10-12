@@ -1,0 +1,74 @@
+[
+  {
+    "category": "Hạ Tầng & Thiết Bị Mạng",
+    "color": "#38bdf8",
+    "items": [
+      { "name": "Cisco Routing & Switching", "level": "Expert", "highlight": true },
+      { "name": "Firewall & Security Gateways", "level": "Advanced", "highlight": true },
+      { "name": "VLAN & Inter-VLAN Routing", "level": "Expert" },
+      { "name": "Enterprise LAN/WAN", "level": "Expert" },
+      { "name": "Wifi Diện Rộng & Cân Bằng Tải", "level": "Expert", "highlight": true },
+      { "name": "VPN / Remote Access (Site-to-Site, SSL)", "level": "Expert" }
+    ]
+  },
+  {
+    "category": "Quản Trị Hệ Thống & Server",
+    "color": "#38bdf8",
+    "items": [
+      { "name": "Windows Server (2012 - 2022)", "level": "Expert", "highlight": true },
+      { "name": "Active Directory & GPO", "level": "Expert", "highlight": true },
+      { "name": "DHCP / DNS / WINS / File Server", "level": "Expert" },
+      { "name": "Sao Lưu & Phục Hồi Thảm Họa", "level": "Expert", "highlight": true },
+      { "name": "Linux Server (Ubuntu / CentOS)", "level": "Advanced" },
+      { "name": "Quản trị Hosting cPanel / WHM", "level": "Expert" }
+    ]
+  },
+  {
+    "category": "Hệ Sinh Thái Microsoft 365",
+    "color": "#818cf8",
+    "items": [
+      { "name": "Microsoft 365 Enterprise", "level": "Advanced", "highlight": true },
+      { "name": "Exchange Online & Mail Server", "level": "Advanced", "highlight": true },
+      { "name": "SharePoint Online & Teams", "level": "Advanced" },
+      { "name": "OneDrive for Business & Intune", "level": "Advanced" },
+      { "name": "Quản Lý Định Danh Azure AD", "level": "Advanced" },
+      { "name": "MCSA / MCITP Certified", "level": "Certified", "highlight": true }
+    ]
+  },
+  {
+    "category": "An Ninh & Giám Sát Doanh Nghiệp",
+    "color": "#34d399",
+    "items": [
+      { "name": "Hệ thống Camera Giám Sát IP / NVR", "level": "Expert", "highlight": true },
+      { "name": "Chính Sách An Toàn Thông Tin", "level": "Advanced", "highlight": true },
+      { "name": "Phân Quyền & Giám Sát Nhật Ký Hệ Thống", "level": "Expert" },
+      { "name": "Phòng Chống Xâm Nhập & Quét Lỗ Hổng", "level": "Advanced" },
+      { "name": "Kiểm Soát Ra Vào (Access Control)", "level": "Advanced" },
+      { "name": "Bảo Vệ Dữ Liệu Đầu Cuối Endpoint", "level": "Advanced" }
+    ]
+  },
+  {
+    "category": "Trí Tuệ Nhân Tạo & Tự Động Hóa",
+    "color": "#c084fc",
+    "items": [
+      { "name": "AI Agent Orchestration", "level": "Advanced", "highlight": true },
+      { "name": "Quy Trình Tự Động Hóa Workflow", "level": "Advanced", "highlight": true },
+      { "name": "Tích Hợp API LLM (Gemini, Claude)", "level": "Advanced" },
+      { "name": "Xử Lý Dữ Liệu Tự Động (Python)", "level": "Advanced" },
+      { "name": "Chatbot Tư Vấn Khách Hàng 24/7", "level": "Advanced" },
+      { "name": "Lập Trình Web App Quản Trị Hiện Đại", "level": "Intermediate" }
+    ]
+  },
+  {
+    "category": "Vận Hành CNTT & Cloud (IT Ops)",
+    "color": "#fb923c",
+    "items": [
+      { "name": "Hỗ Trợ Kỹ Thuật Helpdesk (SLA 99.9%)", "level": "Expert", "highlight": true },
+      { "name": "Điện Toán Đám Mây (Cloud VPS / Azure)", "level": "Advanced", "highlight": true },
+      { "name": "Hệ Thống Lưu Trữ Tập Trung (NAS / SAN)", "level": "Expert" },
+      { "name": "Quản Lý Vận Hành Tài Sản CNTT", "level": "Advanced" },
+      { "name": "Giám Sát Tải Mạng 24/7 (PRTG / Zabbix)", "level": "Expert" },
+      { "name": "Khắc Phục Sự Cố Khẩn Cấp Tận Nơi", "level": "Expert" }
+    ]
+  }
+]

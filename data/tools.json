@@ -1,0 +1,134 @@
+[
+  {
+    "id": "subnet-calc",
+    "name": "Tính Subnet & IP CIDR",
+    "category": "network",
+    "category_name": "Hạ Tầng & Mạng",
+    "badge": "FREE",
+    "badge_type": "free",
+    "icon": "🌐",
+    "desc": "Tính toán dải địa chỉ IP, Subnet Mask, Broadcast và số lượng Host khả dụng trong mạng.",
+    "action": "app:subnet"
+  },
+  {
+    "id": "password-gen",
+    "name": "Tạo Mật Khẩu Bảo Mật Cao",
+    "category": "network",
+    "category_name": "Hạ Tầng & Mạng",
+    "badge": "FREE",
+    "badge_type": "free",
+    "icon": "🔐",
+    "desc": "Tạo mật khẩu ngẫu nhiên đạt chuẩn an ninh thông tin doanh nghiệp chống Brute-force.",
+    "action": "app:password"
+  },
+  {
+    "id": "qr-generator",
+    "name": "Tạo Mã QR Code Online",
+    "category": "office",
+    "category_name": "Tiện Ích Doanh Nghiệp",
+    "badge": "FREE",
+    "badge_type": "free",
+    "icon": "📱",
+    "desc": "Tạo mã QR nhanh cho liên kết Website, Wifi văn phòng, số điện thoại hoặc tin nhắn.",
+    "action": "app:qr"
+  },
+  {
+    "id": "number-to-words",
+    "name": "Đổi Số Tiền Thành Chữ (VNĐ)",
+    "category": "office",
+    "category_name": "Tiện Ích Doanh Nghiệp",
+    "badge": "FREE",
+    "badge_type": "free",
+    "icon": "💵",
+    "desc": "Chuyển đổi số tiền thành chữ tiếng Việt chuẩn xác dùng cho hợp đồng, hóa đơn, phiếu thu chi.",
+    "action": "app:numwords"
+  },
+  {
+    "id": "word-counter",
+    "name": "Đếm Số Từ & Ký Tự SEO",
+    "category": "office",
+    "category_name": "Tiện Ích Doanh Nghiệp",
+    "badge": "FREE",
+    "badge_type": "free",
+    "icon": "📝",
+    "desc": "Phân tích độ dài văn bản, số từ, số ký tự, thời gian đọc ước tính cho bài viết content.",
+    "action": "app:counter"
+  },
+  {
+    "id": "loan-calc",
+    "name": "Tính Lãi Suất Vay & Trả Góp",
+    "category": "office",
+    "category_name": "Tiện Ích Doanh Nghiệp",
+    "badge": "FREE",
+    "badge_type": "free",
+    "icon": "📊",
+    "desc": "Dự toán số tiền gốc, tiền lãi hàng tháng theo dư nợ giảm dần hoặc dư nợ gốc ban đầu.",
+    "action": "app:loan"
+  },
+  {
+    "id": "tts-ai",
+    "name": "Chuyển Văn Bản Sang Giọng AI",
+    "category": "ai",
+    "category_name": "Trí Tuệ Nhân Tạo AI",
+    "badge": "AI PRO",
+    "badge_type": "pro",
+    "icon": "🗣️",
+    "desc": "Tạo giọng đọc thuyết minh tiếng Việt tự nhiên bằng công nghệ AI đa vùng miền.",
+    "action": "app:tts"
+  },
+  {
+    "id": "prompt-builder",
+    "name": "Tạo Prompt AI Chuyên Gia",
+    "category": "ai",
+    "category_name": "Trí Tuệ Nhân Tạo AI",
+    "badge": "AI",
+    "badge_type": "ai",
+    "icon": "⚡",
+    "desc": "Công cụ cấu trúc câu lệnh tối ưu cho ChatGPT, Claude, Midjourney và Google Veo 3.",
+    "action": "app:prompt"
+  },
+  {
+    "id": "network-speed",
+    "name": "Đo Tốc Độ & Ping Mạng",
+    "category": "network",
+    "category_name": "Hạ Tầng & Mạng",
+    "badge": "FREE",
+    "badge_type": "free",
+    "icon": "🚀",
+    "desc": "Đo độ trễ Ping máy chủ, kiểm tra độ ổn định kết nối Internet trực tiếp trên trình duyệt.",
+    "action": "app:speed"
+  },
+  {
+    "id": "base64-tool",
+    "name": "Mã Hóa / Giải Mã Base64",
+    "category": "network",
+    "category_name": "Hạ Tầng & Mạng",
+    "badge": "DEV",
+    "badge_type": "dev",
+    "icon": "🧩",
+    "desc": "Công cụ chuyển đổi chuỗi văn bản và file ảnh sang chuỗi mã hóa Base64 cho lập trình viên.",
+    "action": "app:base64"
+  },
+  {
+    "id": "media-converter",
+    "name": "Chuyển Đổi Video Sang MP3",
+    "category": "media",
+    "category_name": "Đồ Họa & Media",
+    "badge": "FREE",
+    "badge_type": "free",
+    "icon": "🎵",
+    "desc": "Trích xuất âm thanh từ file video MP4, MKV sang định dạng MP3 chất lượng cao.",
+    "action": "app:media"
+  },
+  {
+    "id": "image-compress",
+    "name": "Nén Ảnh Giảm Dung Lượng Online",
+    "category": "media",
+    "category_name": "Đồ Họa & Media",
+    "badge": "FREE",
+    "badge_type": "free",
+    "icon": "🖼️",
+    "desc": "Tối ưu dung lượng hình ảnh JPG, PNG, WebP mà vẫn giữ nguyên độ nét cho website.",
+    "action": "app:compress"
+  }
+]

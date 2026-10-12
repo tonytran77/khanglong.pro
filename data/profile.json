@@ -1,0 +1,42 @@
+{
+  "name": "Trần Thanh Long",
+  "handle": "@TranThanhLong",
+  "title": "Chuyên Viên Bảo Mật & Quản Trị Hệ Thống",
+  "founder_title": "Founder — Khang Long Network & AI Solutions",
+  "dob": "08/10/1983",
+  "experience_years": "20+",
+  "status": "Available for Enterprise Projects",
+  "bio": "Hơn 20 năm kinh nghiệm thực chiến trong lĩnh vực Công nghệ Thông tin: từ quản trị máy chủ, hạ tầng mạng doanh nghiệp, an ninh thông tin, tối ưu hóa hệ sinh thái Microsoft/Cisco đến ứng dụng công nghệ AI Agent và tự động hóa quy trình hiện đại.",
+  "location": "606B Bạch Đằng, TP. Quy Nhơn, Gia Lai",
+  "phone": "0869 096 046",
+  "zalo": "0909 100 423",
+  "email_personal": "longtran.net@gmail.com",
+  "email_corporate": "long.tran@khanglong.pro",
+  "website": "https://khanglong.pro",
+  "stats": {
+    "years_exp": 20,
+    "completed_projects": 85,
+    "certified": 4,
+    "uptime_rate": "99.9%"
+  },
+  "education": [
+    {
+      "period": "2001 – 2005",
+      "school": "Đại học Quy Nhơn",
+      "degree": "Cử nhân Tin học (Chuyên ngành CNTT)",
+      "badge": "Cử Nhân Đại Học"
+    },
+    {
+      "period": "2011",
+      "school": "Trung tâm Đào tạo CNTT Nhất Nghệ (TP.HCM)",
+      "degree": "Quản trị Hệ thống Mạng Microsoft (MCSA, MCITP)",
+      "badge": "MCSA / MCITP"
+    },
+    {
+      "period": "2012",
+      "school": "Trung tâm Tin học VnPro (TP.HCM)",
+      "degree": "Quản trị Mạng Cisco (CCNA Routing & Switching)",
+      "badge": "CCNA Cisco"
+    }
+  ]
+}

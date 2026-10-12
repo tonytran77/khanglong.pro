@@ -1,0 +1,58 @@
+[
+  {
+    "id": "thep-phu-my",
+    "name": "Hạ Tầng Server/Client – Công Ty Thép Tấm Lá Phú Mỹ",
+    "location": "Bà Rịa – Vũng Tàu",
+    "category": "Server & Enterprise Network",
+    "badge": "Doanh Nghiệp Lớn",
+    "summary": "Thiết kế, triển khai hạ tầng máy chủ và hệ thống mạng nội bộ bảo mật cao phục vụ nhà máy sản xuất thép quy mô công nghiệp nặng.",
+    "highlights": [
+      "Xây dựng hạ tầng Windows Server và Active Directory tập trung",
+      "Thiết lập phân quyền bảo mật, chính sách Group Policy (GPO) chặt chẽ",
+      "Triển khai quy trình sao lưu định kỳ và dự phòng phục hồi sự cố"
+    ],
+    "tech": ["Windows Server", "Active Directory", "Cisco Switches", "RAID Storage", "Backup Exec"]
+  },
+  {
+    "id": "resort-phu-yen",
+    "name": "Hệ Thống Camera & Wifi Diện Rộng – Khu Nghỉ Dưỡng Phú Yên",
+    "location": "Phú Yên",
+    "category": "Camera & Wireless",
+    "badge": "Du Lịch & Khách Sạn",
+    "summary": "Thi công toàn bộ hệ thống giám sát an ninh camera IP và mạng Wifi phủ sóng mật độ cao cho toàn thể khuôn viên khu nghỉ dưỡng.",
+    "highlights": [
+      "Phủ sóng Wifi diện rộng với roaming không ngắt quãng cho hàng trăm khách lưu trú",
+      "Lắp đặt hệ thống camera giám sát IP chuẩn nét cao, kết nối trung tâm điều hành",
+      "Tách biệt mạng nội bộ quản lý và mạng Wifi khách hàng để đảm bảo an toàn thông tin"
+    ],
+    "tech": ["Enterprise Wifi", "IP Cameras", "NVR Storage", "VLAN", "PoE Switching"]
+  },
+  {
+    "id": "cho-hoa-lu",
+    "name": "Hạ Tầng Mạng Không Dây Diện Rộng – Chợ Hoa Lư",
+    "location": "Quy Nhơn",
+    "category": "Wireless Infrastructure",
+    "badge": "Khu Thương Mại",
+    "summary": "Triển khai hạ tầng mạng phủ sóng rộng, quản lý truy cập và phân bổ băng thông hiệu quả cho khu vực thương mại dịch vụ đông đúc.",
+    "highlights": [
+      "Cấu hình cân bằng tải đa đường truyền (Multi-WAN Load Balancing)",
+      "Kiểm soát băng thông theo từng nhóm đối tượng sử dụng",
+      "Đảm bảo kết nối ổn định liên tục trong môi trường nhiều vật cản sóng"
+    ],
+    "tech": ["High-power APs", "Load Balancing", "Bandwidth Management", "QoS"]
+  },
+  {
+    "id": "hotel-4star-system",
+    "name": "Quản Trị Vận Hành Hạ Tầng CNTT Khách Sạn 4 Sao",
+    "location": "Quy Nhơn",
+    "category": "IT Operations & Helpdesk",
+    "badge": "Vận Hành Thực Tế",
+    "summary": "Quản trị, vận hành và giám sát toàn bộ hạ tầng máy chủ, máy trạm, thiết bị mạng, hệ thống Wifi nội bộ và phục vụ khách sạn cao cấp.",
+    "highlights": [
+      "Đảm bảo thời gian hoạt động hệ thống (uptime) đạt 99.9%",
+      "Khắc phục sự cố kỹ thuật 24/7 cho toàn thể nhân sự và du khách",
+      "Tối ưu hóa băng thông đường truyền và bảo mật mạng thanh toán"
+    ],
+    "tech": ["Helpdesk System", "Windows Server", "VLAN", "Firewall", "Disaster Recovery"]
+  }
+]
