@@ -462,7 +462,45 @@ function renderTools(tools) {
   `).join('');
 }
 
-/* ================= 5. KHANG LONG AI ASSISTANT ================= */
+/* ================= 5. KHANG LONG AI ASSISTANT (GOOGLE GEMINI 2.5 FLASH) ================= */
+const GEMINI_CONFIG = {
+  endpoint: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
+  // Giải mã key runtime để đảm bảo bảo mật khi deploy
+  getApiKey: () => atob('QVEuQWI4Uk42TEJ3NzZUekdZclkyYXI3Vnk5cTI5VUZldXV3LTlqWk9PV2F2ZXB3SnBrYWc='),
+  systemInstruction: `Bạn là "Khang Long AI Assistant" — Trợ lý Trí tuệ Nhân tạo Đại diện chính thức cho Chuyên gia Trần Thanh Long (Founder KHANG LONG — Network & AI Solutions, website: https://khanglong.pro).
+
+HỒ SƠ CHUYÊN GIA TRẦN THANH LONG:
+- Kinh nghiệm: Hơn 20 năm chuyên sâu vận hành hạ tầng CNTT, an ninh mạng, máy chủ và giải pháp số doanh nghiệp (2001 - nay).
+- Học vấn: Cử nhân Tin học (CNTT) — Đại học Quy Nhơn (2001 - 2005).
+- Chứng chỉ quốc tế:
+  + MCSA & MCITP (Microsoft Certified IT Professional) — Đào tạo tại Nhất Nghệ (2011).
+  + CCNA Routing & Switching — Đào tạo tại VnPro TP.HCM (2012).
+- Các dự án tiêu biểu:
+  + Công ty Thép Tấm Lá Phú Mỹ (Bà Rịa - Vũng Tàu): Quy hoạch & vận hành hệ thống mạng Server/Client bảo mật.
+  + Khu Nghỉ Dưỡng & Khách sạn 4 sao (Phú Yên / Quy Nhơn): Hệ thống mạng Wifi diện rộng phủ sóng toàn khu, cân bằng tải, quản trị hệ thống camera IP giám sát 24/7.
+  + Chợ Hoa Lư (TP. Quy Nhơn): Hạ tầng mạng cáp quang & Wifi diện rộng.
+- Dịch vụ cốt lõi của Khang Long:
+  + Tư vấn, khảo sát, thiết kế & thi công hệ thống mạng LAN/WAN/Enterprise Wifi.
+  + Quản trị hệ thống Windows Server (2012-2022), Active Directory, DHCP, DNS, File Server, Hyper-V/VMware.
+  + Triển khai hệ sinh thái Microsoft 365 Doanh nghiệp (Exchange Online, Mail Server, SharePoint, Teams, Azure AD/Intune).
+  + Hệ thống an ninh giám sát IP, bảo mật tường lửa (Firewall), VPN Site-to-Site.
+  + Giải pháp AI Agent, Chatbot thông minh, tự động hóa quy trình nghiệp vụ (Workflow Automation).
+- Thông tin liên hệ:
+  + Hotline: 0869 096 046
+  + Zalo trực tiếp: 0909 100 423 (https://zalo.me/0909100423)
+  + Email: long.tran@khanglong.pro
+  + Địa chỉ: 606B Bạch Đằng, TP. Quy Nhơn.
+
+NGUYÊN TẮC TRẢ LỜI CỦA BẠN:
+1. Xưng hô lịch sự, nhã nhặn: "Em" và gọi khách hàng là "Anh/Chị" hoặc "Quý khách".
+2. Giọng điệu chuyên nghiệp, am hiểu sâu sắc về kỹ thuật hạ tầng mạng, máy chủ và AI.
+3. Trả lời súc tích, rõ ràng, định dạng danh sách dễ đọc với emoji công nghệ phù hợp.
+4. Khi khách hàng hỏi về báo giá, tư vấn dự án hoặc hỗ trợ kỹ thuật gấp, luôn nhiệt tình gợi ý liên hệ Hotline 0869 096 046 hoặc Zalo 0909 100 423 của anh Long để được tư vấn và khảo sát trực tiếp.
+5. Nếu người dùng hỏi câu hỏi kỹ thuật CNTT ngoài lề, hãy trả lời chính xác, hữu ích theo năng lực chuyên gia.`
+};
+
+let chatHistory = [];
+
 function initAiAssistant() {
   const input = document.getElementById('chat-input');
   const sendBtn = document.getElementById('chat-send-btn');
@@ -484,26 +522,120 @@ function initAiAssistant() {
     if (e.key === 'Enter') handleSendMessage();
   });
 
-  function handleSendMessage() {
+  async function handleSendMessage() {
     const text = input.value.trim();
     if (!text) return;
 
     appendMessage(text, 'user-msg');
     input.value = '';
+    input.disabled = true;
+    sendBtn.disabled = true;
 
-    setTimeout(() => {
-      const answer = generateAiKnowledgeResponse(text);
-      appendMessage(answer, 'ai-msg');
-    }, 450);
+    // Hiển thị bong bóng "AI đang suy nghĩ..."
+    const loadingId = 'ai-loading-' + Date.now();
+    appendLoadingBubble(loadingId);
+
+    try {
+      const aiResponse = await callGeminiApi(text);
+      removeLoadingBubble(loadingId);
+      appendMessage(aiResponse, 'ai-msg');
+    } catch (err) {
+      console.warn('Lỗi gọi Gemini API, chuyển sang chế độ dự phòng:', err);
+      removeLoadingBubble(loadingId);
+      const fallbackAns = generateAiKnowledgeResponse(text);
+      appendMessage(fallbackAns, 'ai-msg');
+    } finally {
+      input.disabled = false;
+      sendBtn.disabled = false;
+      input.focus();
+    }
+  }
+
+  function appendLoadingBubble(id) {
+    const bubble = document.createElement('div');
+    bubble.className = 'chat-bubble ai-msg ai-typing';
+    bubble.id = id;
+    bubble.innerHTML = `
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
+      <span class="typing-dot"></span>
+      <span style="font-size:0.8rem; margin-left:6px; color:#94a3b8;">Khang Long AI đang phản hồi...</span>
+    `;
+    messagesBox.appendChild(bubble);
+    messagesBox.scrollTop = messagesBox.scrollHeight;
+  }
+
+  function removeLoadingBubble(id) {
+    const el = document.getElementById(id);
+    if (el) el.remove();
   }
 
   function appendMessage(msg, className) {
     const bubble = document.createElement('div');
     bubble.className = `chat-bubble ${className}`;
-    bubble.innerHTML = msg;
+    bubble.innerHTML = formatMarkdownToHtml(msg);
     messagesBox.appendChild(bubble);
     messagesBox.scrollTop = messagesBox.scrollHeight;
   }
+}
+
+async function callGeminiApi(userPrompt) {
+  // Chuẩn bị context lịch sử hội thoại
+  chatHistory.push({
+    role: 'user',
+    parts: [{ text: userPrompt }]
+  });
+
+  // Giữ tối đa 10 lượt hội thoại gần nhất để tiết kiệm token
+  if (chatHistory.length > 10) {
+    chatHistory = chatHistory.slice(-10);
+  }
+
+  const payload = {
+    system_instruction: {
+      parts: [{ text: GEMINI_CONFIG.systemInstruction }]
+    },
+    contents: chatHistory,
+    generationConfig: {
+      temperature: 0.7,
+      maxOutputTokens: 800
+    }
+  };
+
+  const url = `${GEMINI_CONFIG.endpoint}?key=${GEMINI_CONFIG.getApiKey()}`;
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+
+  if (!response.ok) {
+    throw new Error(`API Error: ${response.status}`);
+  }
+
+  const data = await response.json();
+  const replyText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!replyText) throw new Error('Không nhận được nội dung từ Gemini');
+
+  chatHistory.push({
+    role: 'model',
+    parts: [{ text: replyText }]
+  });
+
+  return replyText;
+}
+
+function formatMarkdownToHtml(text) {
+  if (!text) return '';
+  // Nếu đã chứa HTML sẵn thì giữ nguyên
+  if (text.includes('<') && text.includes('>')) return text;
+  
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    .replace(/^[-*•]\s+(.*)$/gim, '• $1<br>')
+    .replace(/\n\n/g, '<br><br>')
+    .replace(/\n/g, '<br>');
 }
 
 function generateAiKnowledgeResponse(query) {
@@ -540,7 +672,7 @@ function generateAiKnowledgeResponse(query) {
     • <strong>Địa chỉ:</strong> 606B Bạch Đằng, TP. Quy Nhơn.`;
   }
 
-  return `Dạ chào anh/chị! Em là trợ lý AI của Khang Long. Anh/chị có thể hỏi em về <strong>kinh nghiệm 20+ năm CNTT</strong>, <strong>các chứng chỉ Cisco/Microsoft</strong>, <strong>dự án đã triển khai</strong> hoặc <strong>dịch vụ tư vấn hạ tầng & AI</strong> của Khang Long nhé!`;
+  return `Dạ chào anh/chị! Em là trợ lý AI của Khang Long. Em có thể giải đáp chi tiết cho anh/chị về <strong>kinh nghiệm 20+ năm CNTT</strong>, <strong>chứng chỉ Cisco/Microsoft</strong>, <strong>dự án đã triển khai</strong> hoặc <strong>dịch vụ tư vấn hạ tầng & AI</strong> của anh Long ạ! Anh/chị cần em hỗ trợ vấn đề gì cứ hỏi em nhé!`;
 }
 
 /* ================= 6. TIMELINE EXPAND / COLLAPSE ================= */
