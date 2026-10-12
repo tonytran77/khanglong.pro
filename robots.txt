@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap Index for Google, Bing and Yandex
+Sitemap: https://khanglong.pro/sitemap.xml
