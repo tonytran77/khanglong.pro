@@ -41,28 +41,76 @@
 
   <!-- Google Structured Data (JSON-LD Schema) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "KHANG LONG — Network & AI Solutions",
-    "image": "https://khanglong.pro/assets/images/khanglong_logo_official.jpg",
-    "url": "https://khanglong.pro/",
-    "telephone": "0869096046",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "606B Bạch Đằng",
-      "addressLocality": "Quy Nhơn",
-      "addressRegion": "Gia Lai",
-      "addressCountry": "VN"
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://khanglong.pro/#organization",
+      "name": "KHANG LONG — Network & AI Solutions",
+      "image": "https://khanglong.pro/assets/images/khanglong_logo_official.jpg",
+      "url": "https://khanglong.pro/",
+      "telephone": "0869096046",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "606B Bạch Đằng",
+        "addressLocality": "Quy Nhơn",
+        "addressRegion": "Gia Lai",
+        "addressCountry": "VN"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Trần Thanh Long",
+        "jobTitle": "Chuyên Viên Bảo Mật & Quản Trị Hệ Thống"
+      },
+      "description": "Chuyên sâu khảo sát, thiết kế và thi công hạ tầng mạng LAN/WAN, Máy chủ Windows Server, Hệ sinh thái Microsoft 365, An ninh Camera IP và Giải pháp AI Agent doanh nghiệp."
     },
-    "founder": {
-      "@type": "Person",
-      "name": "Trần Thanh Long",
-      "jobTitle": "Chuyên Viên Bảo Mật & Quản Trị Hệ Thống"
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://khanglong.pro/#website",
+      "url": "https://khanglong.pro/",
+      "name": "KHANG LONG — Network & AI Solutions",
+      "publisher": {
+        "@id": "https://khanglong.pro/#organization"
+      }
     },
-    "description": "Chuyên sâu khảo sát, thiết kế và thi công hạ tầng mạng LAN/WAN, Máy chủ Windows Server, Hệ sinh thái Microsoft 365, An ninh Camera IP và Giải pháp AI Agent doanh nghiệp."
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Danh mục chính KHANG LONG",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Trang Chủ — Khang Long Cyber Hub",
+          "description": "Chuyên gia Hạ tầng Mạng doanh nghiệp, Máy chủ Microsoft Server, Quản trị hệ thống và Giải pháp AI Agent.",
+          "url": "https://khanglong.pro/index.html"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Kho Công Cụ & Tiện Ích Trực Tuyến",
+          "description": "Bộ tiện ích mạng IP, Subnet Calculator, Trình mã hóa bảo mật và công cụ kỹ thuật miễn phí.",
+          "url": "https://khanglong.pro/tools.html"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Dự Án Hạ Tầng Đã Triển Khai",
+          "description": "Hơn 85+ dự án hạ tầng mạng LAN/WAN, Wifi diện rộng, hệ thống máy chủ và camera doanh nghiệp.",
+          "url": "https://khanglong.pro/projects.html"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Dịch Vụ & Giải Pháp Doanh Nghiệp",
+          "description": "Tư vấn, thiết kế, triển khai hạ tầng mạng, bảo mật và giải pháp AI Agent thực chiến.",
+          "url": "https://khanglong.pro/services.html"
+        }
+      ]
+    }
+  ]
   </script>
 
   <!-- Browser Theme & Mobile Address Bar Color -->
