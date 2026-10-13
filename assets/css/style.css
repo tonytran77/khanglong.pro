@@ -36,10 +36,10 @@
   --green: #34d399;
   --green-glow: rgba(52, 211, 153, 0.15);
 
-  /* Typography Colors */
+  /* Typography Colors - High Contrast for WCAG AAA & Lighthouse 100 */
   --text-primary: #f4f4f5;
-  --text-secondary: #9ca3af;
-  --text-muted: #71717a;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
   --text-accent: #ffffff;
 
   /* Fonts */
